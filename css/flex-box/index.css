@@ -1,0 +1,40 @@
+.container{
+ border: 1px solid red;
+ height: 500px;
+ display:flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ gap: 10px;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+ /* row-gap: 10px;
+ column-gap: 10px; */
+}
+.box{
+    width: 50px;
+    /* height: 50px; */
+    /* margin: 10px; */
+    background-color: aqua;
+    border: 1px solid black;
+    /* flex-basis:25%; */
+}
+#box-1{
+    /* order: 1; */
+    /* flex-grow: 1;
+    flex-shrink: 2; */
+    /* initial width */
+    flex-basis:200px;
+    position: relative;
+    /* top: 50px; */
+}
+
+.nav-bar{
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.spacer{
+    height: 900px;
+}
