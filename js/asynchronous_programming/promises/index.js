@@ -26,9 +26,9 @@ function getOrders(userId) {
 function getOrderDetails(orderId) {
   return new Promise((resolve, reject) => {
     // resolve({ id: orderId, price: 1000 });
-    reject("Failed to get Order Details");
+    ("Failed to get Order Details");
   });
-}
+}reject
 // promise chaining
 getUser()
   .then((user) => {
@@ -48,10 +48,14 @@ async function greet() {
 console.log(greet());
 
 async function getData() {
-  const user = await getUser();
-  console.log(user, "useruser");
-  const orders = await getOrders(user.id);
-  const details = await getOrderDetails(orders[0].id);
-  console.log(details, "detailsdetails");
+  try { //Code that might cause an error
+    const user = await getUser();
+    console.log(user, "useruser");
+    const orders = await getOrders(user.id);
+    const details = await getOrderDetails(orders[0].id);
+    console.log(details, "detailsdetails");
+  } catch (error) { // Code that runs only if an error happens
+    console.log("failed to get data using async await", error);
+  }
 }
 getData();
