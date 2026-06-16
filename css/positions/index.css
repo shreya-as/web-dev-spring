@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.relative{
+    position: relative;
+    border: 1px solid black;
+    top: 40px;
+    left: 40px;
+  
+}
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+}
+.scroll{
+    height: 900px;
+}
