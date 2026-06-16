@@ -24,11 +24,12 @@ function getOrders(userId) {
 }
 
 function getOrderDetails(orderId) {
-  return new Promise((resolve) => {
-    resolve({ id: orderId, price: 1000 });
+  return new Promise((resolve, reject) => {
+    // resolve({ id: orderId, price: 1000 });
+    reject("Failed to get Order Details");
   });
 }
-
+// promise chaining
 getUser()
   .then((user) => {
     return getOrders(user.id);
@@ -38,18 +39,19 @@ getUser()
   })
   .then((details) => {
     console.log(details);
-  });
+  })
+  .catch((error) => console.log("Failed to get Data", error));
 
-getData();
 async function greet() {
   return "Hello";
 }
 console.log(greet());
 
-// async function getData() {
-//     const user = await getUser();
-//     const orders = await getOrders(user.id);
-//     const details = await getOrderDetails(orders[0].id);
-
-//     console.log(details);
-// }
+async function getData() {
+  const user = await getUser();
+  console.log(user, "useruser");
+  const orders = await getOrders(user.id);
+  const details = await getOrderDetails(orders[0].id);
+  console.log(details, "detailsdetails");
+}
+getData();
