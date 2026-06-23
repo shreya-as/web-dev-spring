@@ -28,7 +28,8 @@ function getOrderDetails(orderId) {
     // resolve({ id: orderId, price: 1000 });
     ("Failed to get Order Details");
   });
-}reject
+}
+reject;
 // promise chaining
 getUser()
   .then((user) => {
@@ -48,14 +49,19 @@ async function greet() {
 console.log(greet());
 
 async function getData() {
-  try { //Code that might cause an error
+  try {
+    //Code that might cause an error
     const user = await getUser();
     console.log(user, "useruser");
     const orders = await getOrders(user.id);
     const details = await getOrderDetails(orders[0].id);
     console.log(details, "detailsdetails");
-  } catch (error) { // Code that runs only if an error happens
+  } catch (error) {
+    // Code that runs only if an error happens
     console.log("failed to get data using async await", error);
+  } finally {
+    // Optional: Code that ALWAYS runs, no matter what
+    console.log("i am finally block");
   }
 }
 getData();
